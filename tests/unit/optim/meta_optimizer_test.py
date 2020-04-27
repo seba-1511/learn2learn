@@ -65,9 +65,6 @@ class MetaOptimizerTests(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_supervised(self):
-        pass
-
     def fast_adapt(self,
                    adaptation_data,
                    evaluation_data,
@@ -171,7 +168,7 @@ class MetaOptimizerTests(unittest.TestCase):
             # NOTE: For meta_opt the gradients can be very small, so we check that at least one param is updated.
             meta_opt_checks = [close(p, op) for p, op in zip(meta_opt.parameters(), old_opt_params)]
             self.assertFalse(all(meta_opt_checks),
-                    'meta-opt parameters were not updated ?')
+                             'meta-opt parameters were not updated ?')
 
     def test_supervised(self):
         transformations = transforms.Compose([

@@ -117,7 +117,7 @@ def main(
         tau=1.00,
         gamma=0.99,
         seed=42,
-        num_workers=2,
+        num_workers=1,
         cuda=0,
 ):
     cuda = bool(cuda)
